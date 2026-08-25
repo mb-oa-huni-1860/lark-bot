@@ -2,8 +2,8 @@ name: Run Lark Bot
 
 on:
   schedule:
-    # 05:00, 07:00, 10:00 UTC (Tương ứng 9h, 11h, 14h giờ Georgia - UTC+4)
-    - cron: '0 5,7,10 * * *'
+    # 05:00, 07:00, 10:00 UTC (Tương ứng 9h, 11h, 14h giờ Georgia) - Cứ 3 ngày chạy 1 lần
+    - cron: '0 5,7,10 */3 * *'
   workflow_dispatch:
 
 jobs:
@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
