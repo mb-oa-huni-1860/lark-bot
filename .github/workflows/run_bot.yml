@@ -2,12 +2,16 @@ name: Run Lark Bot
 
 on:
   schedule:
-    - cron: '0 5,7,10 * * *'
+    # Chạy 09:05, 11:05, 14:05 theo giờ Georgia mỗi ngày
+    - cron: '5 9,11,14 * * *'
+      timezone: 'Asia/Tbilisi'
+
   workflow_dispatch:
 
 jobs:
   run-script:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
