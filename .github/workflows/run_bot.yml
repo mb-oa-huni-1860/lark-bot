@@ -2,6 +2,7 @@ name: Run Lark Bot
 
 on:
   schedule:
+    # 05:00, 07:00, 10:00 UTC = 09:00, 11:00, 14:00 giờ Georgia (MỖI NGÀY)
     - cron: '0 5,7,10 * * *'
   workflow_dispatch:
 
