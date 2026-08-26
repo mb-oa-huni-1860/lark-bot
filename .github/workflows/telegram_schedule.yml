@@ -23,4 +23,4 @@ jobs:
           pip install requests
 
       - name: Run Telegram Bot
-        run: python telegram_bot.py
+        run: python telegram_bot.p
