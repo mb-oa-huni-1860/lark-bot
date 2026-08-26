@@ -2,7 +2,7 @@ name: Run Telegram Bot Every 5 Mins
 
 on:
   schedule:
-    # Đặt lịch chạy 5 phút một lần
+    
     - cron: '*/5 * * * *'
   workflow_dispatch: # Cho phép bấm nút chạy thủ công để test
 
