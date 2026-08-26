@@ -1,0 +1,27 @@
+name: Run Telegram Bot Every 5 Mins
+
+on:
+  schedule:
+    # Đặt lịch chạy 5 phút một lần
+    - cron: '*/5 * * * *'
+  workflow_dispatch: # Cho phép bấm nút chạy thủ công để test
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run Telegram Bot
+        run: python telegram_bot.py
